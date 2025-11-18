@@ -1,5 +1,6 @@
 # PMG-Bench
 A unified dataset for personalized multimodal generation in recommender systems, covering movies, e-commerce fashion, and sticker scenarios.
+This is a uncompleted version and we are working on it.
 
 # 🚀 Overview
 
@@ -243,3 +244,7 @@ img = img_dict[1234]   # numpy array (H, W, 3)
 ```
 
 ---
+
+# 🔗 Reference
+
+Shen X, Zhang R, Zhao X, et al. Pmg: Personalized multimodal generation with large language models[C]//Proceedings of the ACM Web Conference 2024. 2024: 3833-3843.
