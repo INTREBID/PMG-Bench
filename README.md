@@ -333,6 +333,7 @@ All datasets follow a unified JSON format for train/validation/test splits:
 
 # Create conda environment
 conda env create -n pmg-bench python==3.10
+
 conda activate pmg_bench
 
 # install requirements
@@ -340,21 +341,21 @@ pip install -r requirements.txt
 
 #### Textual Inversion
 cd method/textual_inversion
-# Follow instructions in evaluate_*.py
+##### Follow instructions in evaluate_*.py
 
 #### IP-Adapter
 cd method/ip-adapter
-# Follow instructions in README
+##### Follow instructions in README
 
 #### PMG
 cd method/PMG
-# Train on FLICKR
+##### Train on FLICKR
 python FLICKR_PMG_TRAIN.py
 
-# Train on POG
+##### Train on POG
 python POG_PMG_TRAIN.py
 
-# Train on SER
+##### Train on SER
 python SER_PMG_TRAIN.py
 
 ### Evaluation
