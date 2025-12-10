@@ -231,7 +231,7 @@ This benchmark evaluates personalized image generation methods that learn and ad
 |--------|----------------|-----------------|---------------|----------------|-----|----------------|-------|-----------|
 | Textual Inversion | 0.7782±0.0635 | 0.8025±0.0584 | 0.2707±0.1194 | 0.2591±0.0977 | 0.1953±0.0373 | 0.5467±0.0845 | 0.2376±0.0392 | 5.8417±0.8150 |
 | IP-Adapter | 0.7269±0.0847 | 0.6971±0.0842 | 0.2654±0.1098 | 0.2838±0.1271 | 0.2580±0.0414 | 0.7480±0.1137 | 0.1620±0.0530 | 5.1885±0.9788 |
-| PMG | 0.7841±0.0600 | 0.7878±0.0526 | 0.2690±0.1093 | 0.2785±0.0990 | 0.2357±0.0413 | 0.5705±0.1073 | 0.2009±0.0389 | 10.1608±0.9049 |
+| PMG | 0.7841±0.0600 | 0.7878±0.0526 | 0.2690±0.1093 | 0.2785±0.0990 | 0.2357±0.0413 | 0.5705±0.1073 | 0.2009±0.0389 | 7.1608±0.9049 |
 
 </details>
 
@@ -244,7 +244,7 @@ This benchmark evaluates personalized image generation methods that learn and ad
 |--------|----------------|-----------------|---------------|----------------|-----|----------------|-------|-----------|
 | Textual Inversion | 0.7167±0.0502 | 0.7407±0.0360 | 0.2533±0.1243 | 0.2500±0.0778 | 0.2247±0.0418 | 0.6619±0.0703 | 0.2409±0.0310 | 5.7650±0.7018 |
 | IP-Adapter | 0.6859±0.0636 | 0.6863±0.0515 | 0.2452±0.1225 | 0.2569±0.1004 | 0.2401±0.0397 | 0.7477±0.0636 | 0.1762±0.0530 | 5.0359±0.8203 |
-| PMG | 0.7034±0.0622 | 0.7224±0.0528 | 0.2353±0.1282 | 0.2247±0.1039 | 0.2548±0.0421 | 0.7023±0.0831 | 0.1897±0.0486 | 10.7765±0.3973 |
+| PMG | 0.7034±0.0622 | 0.7224±0.0528 | 0.2353±0.1282 | 0.2247±0.1039 | 0.2548±0.0421 | 0.7023±0.0831 | 0.1897±0.0486 | 7.7765±0.3973 |
 
 </details>
 
@@ -257,7 +257,7 @@ This benchmark evaluates personalized image generation methods that learn and ad
 |--------|----------------|-----------------|---------------|----------------|-----|----------------|-------|-----------|----------|
 | Textual Inversion | 0.8019±0.0607 | 0.8086±0.0352 | 0.2957±0.1120 | 0.2949±0.0772 | 0.1536±0.0461 | 0.4735±0.0696 | 0.1925±0.0475 | 5.1527±1.1666 | 0.4475±0.2839 |
 | IP-Adapter | 0.7930±0.0675 | 0.7624±0.0497 | 0.3223±0.0915 | 0.3420±0.1081 | 0.1835±0.0437 | 0.6546±0.0867 | 0.1294±0.0480 | 5.4714±0.6464 | 0.7108±0.2455 |
-| PMG | 0.7487±0.0613 | 0.7955±0.0456 | 0.3102±0.1190 | 0.2889±0.0804 | 0.1907±0.0468 | 0.5002±0.0639 | 0.2255±0.0399 | 10.4664±0.5896 | 0.4475±0.2839 |
+| PMG | 0.7487±0.0613 | 0.7955±0.0456 | 0.3102±0.1190 | 0.2889±0.0804 | 0.1907±0.0468 | 0.5002±0.0639 | 0.2255±0.0399 | 7.4664±0.5896 | 0.6475±0.2839 |
 
 </details>
 
@@ -269,7 +269,8 @@ This benchmark evaluates personalized image generation methods that learn and ad
 
 All datasets follow a unified JSON format for train/validation/test splits:
 
-[
+
+```json
   {
     "user_id": "unique_user_identifier",
     "worker_id": "unique_worker_identifier",  // FLICKR only
@@ -295,24 +296,28 @@ All datasets follow a unified JSON format for train/validation/test splits:
     "window_position": 154,  // POG, FLICKR
     "total_sequence_length": 783  // POG, FLICKR
   }
-]### User Preference Files
+```
+### User Preference Files
 
 #### FLICKR: `FLICKR_styles.json`
 
-[
+```json
   {
     "worker": "WORKER_ID",
     "style": "Nature, landscapes, vibrant colors, serene, dramatic..."
   }
-]#### POG: `user_styles.json`
+```
+#### POG: `user_styles.json`
 
-[
+```json
   {
     "user": "USER_HASH",
     "style": "Elegant, vibrant, classic, sophisticated..."
   }
-]#### SER: `user_preferences.json`
+```
+#### SER: `user_preferences.json`
 
+```json
 {
   "topic-name": {
     "topic": "topic-name",
@@ -320,45 +325,40 @@ All datasets follow a unified JSON format for train/validation/test splits:
     "keywords": ["keyword1", "keyword2", ...],
     "sample_captions": ["caption1", "caption2", ...]
   }
-}---
-
+}
+```
 ## 🚀 Getting Started
 
 ### Environment Setup
 
 # Create conda environment
-conda env create -f environment.yaml
+conda env create -n pmg-bench python==3.10
 conda activate pmg_bench
 
-# Or install requirements
+# install requirements
 pip install -r requirements.txt
 
 #### Textual Inversion
 cd method/textual_inversion
 # Follow instructions in evaluate_*.py
+
 #### IP-Adapter
 cd method/ip-adapter
 # Follow instructions in README
+
 #### PMG
 cd method/PMG
 # Train on FLICKR
-sbatch -p gpu --gres=gpu:1 -c 8 --job-name=flickr_train \
-  --wrap="python FLICKR_PMG_TRAIN.py"
+python FLICKR_PMG_TRAIN.py
 
 # Train on POG
-sbatch -p gpu --gres=gpu:1 -c 8 --job-name=pog_train \
-  --wrap="python POG_PMG_TRAIN.py"
+python POG_PMG_TRAIN.py
 
 # Train on SER
-sbatch -p gpu --gres=gpu:1 -c 8 --job-name=ser_train \
-  --wrap="python SER_PMG_TRAIN.py"### Evaluation
+python SER_PMG_TRAIN.py
 
-cd method/PMG
+### Evaluation
 
-# Run evaluation on all datasets
-bash eval.bash
-
-# Or individually
 python evaluation.py --dataset FLICKR --device cuda
 python evaluation.py --dataset POG --device cuda
 python evaluation.py --dataset SER --device cuda
