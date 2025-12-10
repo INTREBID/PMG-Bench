@@ -331,37 +331,39 @@ All datasets follow a unified JSON format for train/validation/test splits:
 
 ### Environment Setup
 
-# Create conda environment
+#### Create conda environment
 conda env create -n pmg-bench python==3.10
 
 conda activate pmg_bench
 
-# install requirements
+#### install requirements
 pip install -r requirements.txt
 
-#### Textual Inversion
+### Textual Inversion
 cd method/textual_inversion
-##### Follow instructions in evaluate_*.py
+#### Follow instructions in evaluate_*.py
 
-#### IP-Adapter
+### IP-Adapter
 cd method/ip-adapter
-##### Follow instructions in README
+#### Follow instructions in README
 
-#### PMG
+### PMG
 cd method/PMG
-##### Train on FLICKR
+#### Train on FLICKR
 python FLICKR_PMG_TRAIN.py
 
-##### Train on POG
+#### Train on POG
 python POG_PMG_TRAIN.py
 
-##### Train on SER
+#### Train on SER
 python SER_PMG_TRAIN.py
 
 ### Evaluation
 
 python evaluation.py --dataset FLICKR --device cuda
+
 python evaluation.py --dataset POG --device cuda
+
 python evaluation.py --dataset SER --device cuda
 
 ## 📊 Key Findings
