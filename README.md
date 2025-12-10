@@ -4,14 +4,14 @@ A comprehensive benchmark for evaluating personalized image generation methods a
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Datasets](#datasets)
-- [Baseline Methods](#baseline-methods)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Benchmark Results](#benchmark-results)
-- [Data Format](#data-format)
-- [Getting Started](#getting-started)
-- [Citation](#citation)
+- [Overview](##overview)
+- [Datasets](##datasets)
+- [Baseline Methods](##baseline-methods)
+- [Evaluation Metrics](##evaluation-metrics)
+- [Benchmark Results](##benchmark-results)
+- [Data Format](##data-format)
+- [Getting Started](##getting-started)
+- [Citation](##citation)
 
 ---
 
